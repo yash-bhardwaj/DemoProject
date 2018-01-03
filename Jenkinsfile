@@ -6,7 +6,9 @@ def call() {
 			checkout scm
 			echo 'branchName---------> ${env.NODE_NAME}'
 			echo 'branchName---------> ${this.env}'
-			echo 'MicroserviceInformation---------> [${getMicroserviceInformation()}]'
+			String mi = getMicroserviceInformation()
+			println mi
+			echo 'MicroserviceInformation---------> [${mi}]'
 		}
 		stage('Build') {
 			sh 'printenv'
