@@ -4,8 +4,12 @@ def call() {
 		stage('Initialization') {
 			echo 'here'
 			checkout scm
+			String branchName = env.BRANCH_NAME
+			echo branchName
+			echo '${branchName}'
 			echo 'branchName---------> ${env.NODE_NAME}'
-			echo 'branchName---------> ${this.env}'
+			env.PATH = "${tool 'maven-3'}/bin:${env.PATH}"
+			echo 'branchName---------> ${env.PATH}'
 			String mi = getMicroserviceInformation()
 			println mi
 			echo 'MicroserviceInformation---------> [${mi}]'
