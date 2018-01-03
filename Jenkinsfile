@@ -2,7 +2,8 @@ node{
 	stage('Initialization') {
 		echo 'here'
 		checkout scm
-		String branchName = this.env.BRANCH_NAME
-		echo 'branchName---------> ${branchName}'
+		echo 'branchName---------> ${this}'
+		echo 'branchName---------> ${this.env}'
+		echo 'branchName---------> ${this.env.BRANCH_NAME}'
 	}
 }
