@@ -7,8 +7,6 @@ node {
 		echo 'branchName---------> ${this.env.BRANCH_NAME}'
 	}
 	stage('Build') {
-		steps {
-			sh 'printenv'
-		}
+		sh 'printenv'
 	}
 }
