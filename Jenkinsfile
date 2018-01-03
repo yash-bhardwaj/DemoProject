@@ -1,3 +1,4 @@
+call()
 def call() {
 	node {
 		stage('Initialization') {
