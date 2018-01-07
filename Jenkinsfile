@@ -8,7 +8,8 @@ def call() {
 			echo branchName
 			echo '${branchName}'
 			echo 'branchName---------> ${env.NODE_NAME}'
-			env.PATH = "${tool 'maven-3'}/bin:${env.PATH}"
+			def maven = tool 'apache-maven-3.0.1' 
+			env.PATH = "${maven}/bin:${env.PATH}"
 			echo 'branchName---------> ${env.PATH}'
 			String mi = getMicroserviceInformation()
 			println mi
