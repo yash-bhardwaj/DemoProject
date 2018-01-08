@@ -61,7 +61,7 @@ def performanceTesting(String htmlOutputLocation) {
 }
 
 // /mnt/mesos/sandbox/workspace/DemoProject/gatling-test/src/test/results/simulations-1505816818577/index.html
-def htmlOutputLocation = "/mnt/mesos/sandbox/workspace/DemoProject/gatling-test/src/test/results/"
+def htmlOutputLocation = "/home/yash/.jenkins/workspace/demo-Pipeline/gatling-test/src/test/results/"
 
 
 performanceTesting (htmlOutputLocation)
