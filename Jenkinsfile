@@ -34,7 +34,7 @@ private String runMavenVerify(MAVEN_HOME) {
     echo 'Verification Status:['+verificationStatus+']'
     
     if (verificationStatus != 0) {
-        throw new Exception('The Maven verification of the service has failed.')
+        throw new RuntimeException('The Maven verification of the service has failed.')
     }
     else {
         echo 'Maven Stage Passed.'
