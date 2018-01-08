@@ -5,7 +5,7 @@ node {
         echo 'here'
         echo env.NODE_NAME
         echo '5.--------->'
-        mvnHome = tool 'MAVEN3'
+        mvnHome = tool 'M3'
         echo mvnHome
         env.PATH = "${maven}/bin:${env.PATH}"
         echo '7.--------->'
