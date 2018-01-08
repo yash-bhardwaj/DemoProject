@@ -4,7 +4,8 @@ def call() {
 		stage('Initialization') {
 			echo 'here'
 			checkout scm
-			echo env.NODE_NAME
+			echo env
+			echo 'NODE_NAME:' env.NODE_NAME
 			echo '5.--------->'
 			def maven = tool 'M3' 
 			echo '6.--------->'
