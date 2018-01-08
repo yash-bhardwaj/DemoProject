@@ -4,16 +4,9 @@ def call() {
 		stage('Initialization') {
 			echo 'here'
 			checkout scm
-			echo '1.--------->'
-			String branchName = env.BRANCH_NAME
-			echo '2.--------->'
-			echo branchName
-			echo '3.--------->'
-			echo '${branchName}'
-			echo '4.--------->'
-			echo 'branchName---------> ${env.NODE_NAME}'
+			echo env.NODE_NAME
 			echo '5.--------->'
-			def maven = tool 'apache-maven-3.0.1' 
+			def maven = tool 'M3' 
 			echo '6.--------->'
 			env.PATH = "${maven}/bin:${env.PATH}"
 			echo '7.--------->'
