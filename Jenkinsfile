@@ -54,14 +54,6 @@ private String runMavenVerify(MAVEN_HOME) {
 def performanceTesting(String htmlOutputLocation) {
     node {
         stage("Performance") {
-            publishHTML([
-                        allowMissing          : false,
-                        alwaysLinkToLastBuild : false,
-                        keepAll               : true,
-                        reportDir             : "./target/gatling-test/results/",
-                        reportFiles           : 'index.html',
-                        reportName            : 'Performance Test Report'
-                ])
             gatlingArchive()
             manager.addShortText(htmlOutputLocation)
         }
