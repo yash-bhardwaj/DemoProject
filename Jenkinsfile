@@ -3,21 +3,21 @@ node {
         checkout scm
         def mvnHome
         echo 'here'
-        echo env.NODE_NAME
+        echo env.BRANCH_NAME
         echo '5.--------->'
         mvnHome = tool 'M3'
         echo '5.1--------->'
         echo mvnHome
         echo '6.--------->'
         env.PATH = "${mvnHome}/bin:${env.PATH}"
+        echo env.PATH
         echo '7.--------->'
-        echo 'branchName---------> ${env.PATH}'
+        echo env.PATH
         echo '8.--------->'
         String mi = getMicroserviceInformation()
         echo mi
-        println mi
         echo '10.--------->'
-        echo 'MicroserviceInformation---------> [${mi}]'
+        echo 'MicroserviceInformation---------> '+mi
     }
     stage('Build') {
         sh 'printenv'
