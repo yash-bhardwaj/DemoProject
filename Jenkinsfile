@@ -54,6 +54,14 @@ private String runMavenVerify(MAVEN_HOME) {
 def performanceTesting(String htmlOutputLocation) {
     node {
         stage("Performance") {
+            publishHTML([
+                        allowMissing          : false,
+                        alwaysLinkToLastBuild : false,
+                        keepAll               : true,
+                        reportDir             : "./target/gatling-test/results/",
+                        reportFiles           : 'index.html',
+                        reportName            : 'Performance Test Report'
+                ])
             gatlingArchive()
             manager.addShortText(htmlOutputLocation)
         }
@@ -61,7 +69,7 @@ def performanceTesting(String htmlOutputLocation) {
 }
 
 // /mnt/mesos/sandbox/workspace/DemoProject/gatling-test/src/test/results/simulations-1505816818577/index.html
-def htmlOutputLocation = "/home/yash/.jenkins/workspace/demo-Pipeline/gatling-test/src/test/results/"
+def htmlOutputLocation = "/home/yash/.jenkins/workspace/demo-Pipeline/gatling-test/results/"
 
 
 performanceTesting (htmlOutputLocation)
