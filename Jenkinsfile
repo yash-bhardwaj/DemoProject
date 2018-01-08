@@ -4,7 +4,7 @@ node {
         echo 'here'
         echo env.NODE_NAME
         echo '5.--------->'
-        cat /var/lib/jenkins/hudson.tasks.Maven.xml
+        more /var/lib/jenkins/hudson.tasks.Maven.xml
         def maven = tool 'maven-3'
         echo '6.--------->'
         env.PATH = "${maven}/bin:${env.PATH}"
