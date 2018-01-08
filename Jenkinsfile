@@ -4,7 +4,7 @@ node {
         echo 'here'
         echo env.NODE_NAME
         echo '5.--------->'
-        def maven = tool 'M3'
+        def maven = tool 'maven-3'
         echo '6.--------->'
         env.PATH = "${maven}/bin:${env.PATH}"
         echo '7.--------->'
