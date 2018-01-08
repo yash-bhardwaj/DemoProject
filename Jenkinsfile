@@ -34,7 +34,8 @@ private String getMicroserviceInformation() {
 }
 
 private String runMavenVerify(MAVEN_HOME) {
-    sh 'chmod +x ${MAVEN_HOME}'
+    String chmodStatus = sh script: "chmod +x ${MAVEN_HOME}", returnStatus: true
+    echo chmodStatus
     int verificationStatus = sh script: "${MAVEN_HOME} clean verify --fail-at-end --batch-mode --update-snapshots", returnStatus: true
     echo 'Verification Status:['+verificationStatus+']'
     
