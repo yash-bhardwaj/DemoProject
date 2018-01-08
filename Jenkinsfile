@@ -1,7 +1,7 @@
 node {
     stage('Initialization') {
         checkout scm
-        echo 'this--------->'+this
+        echo 'this.env--------->'+this.env
         String branchName = env.NODE_NAME
         echo 'branchName--------->'+branchName
         def mvnHome = tool 'M3'
