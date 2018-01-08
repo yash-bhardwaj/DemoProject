@@ -1,22 +1,13 @@
 node {
     stage('Initialization') {
         checkout scm
-        def mvnHome
-        echo 'here'
-        echo env.BRANCH_NAME
-        echo '5.--------->'
-        mvnHome = tool 'M3'
-        echo '5.1--------->'
-        echo mvnHome
-        echo '6.--------->'
+        String branchName = env.NODE_NAME
+        echo 'branchName--------->'+branchName
+        def mvnHome = tool 'M3'
+        echo 'mvnHome--------->'+mvnHome
         env.PATH = "${mvnHome}/bin:${env.PATH}"
-        echo env.PATH
-        echo '7.--------->'
-        echo env.PATH
-        echo '8.--------->'
+        echo 'env.PATH----->['+ env.PATH +']'
         String mi = getMicroserviceInformation()
-        echo mi
-        echo '10.--------->'
         echo 'MicroserviceInformation---------> '+mi
     }
     stage('Build') {
