@@ -9,12 +9,12 @@ node {
         echo '5.1--------->'
         echo mvnHome
         echo '6.--------->'
-        env.PATH = "${maven}/bin:${env.PATH}"
+        env.PATH = "${mvnHome}/bin:${env.PATH}"
         echo '7.--------->'
         echo 'branchName---------> ${env.PATH}'
         echo '8.--------->'
         String mi = getMicroserviceInformation()
-        echo '9.--------->'
+        echo mi
         println mi
         echo '10.--------->'
         echo 'MicroserviceInformation---------> [${mi}]'
