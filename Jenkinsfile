@@ -6,7 +6,9 @@ node {
         echo env.NODE_NAME
         echo '5.--------->'
         mvnHome = tool 'M3'
+        echo '5.1--------->'
         echo mvnHome
+        echo '6.--------->'
         env.PATH = "${maven}/bin:${env.PATH}"
         echo '7.--------->'
         echo 'branchName---------> ${env.PATH}'
