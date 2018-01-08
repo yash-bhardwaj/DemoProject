@@ -1,8 +1,7 @@
 node {
     stage('Initialization') {
-        echo 'here'
         checkout scm
-        echo env
+        echo 'here'
         echo env.NODE_NAME
         echo '5.--------->'
         def maven = tool 'M3'
