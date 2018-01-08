@@ -15,9 +15,9 @@ node {
         String mi = getMicroserviceInformation()
         echo 'MicroserviceInformation---------> '+mi
         
-        try{
+        try {
             runMavenVerify(MAVEN_HOME)
-        }catch(Exception e){
+        } catch(Exception e) {
             echo 'Problem while building job:['+e.getMessage()+']'
         }
         echo 'Ending the script...'
