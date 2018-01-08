@@ -7,8 +7,8 @@ node {
     }
     stage('Maven') {
         def MAVEN_HOME = tool 'M3'
+        MAVEN_HOME = "${MAVEN_HOME}/bin"
         echo 'MAVEN_HOME--------->'+MAVEN_HOME
-        
         env.PATH = "${MAVEN_HOME}/bin:${env.PATH}"
         echo 'env.PATH----->['+ env.PATH +']'
         
