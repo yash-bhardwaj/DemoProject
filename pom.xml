@@ -12,6 +12,7 @@
     <modules>
         <module>hello-api</module>
         <module>hello-impl</module>
+        <module>gatling-test</module>
     </modules>
 
     <build>
