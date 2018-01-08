@@ -1,12 +1,12 @@
 node {
     stage('Initialization') {
         checkout scm
+        def mvnHome
         echo 'here'
         echo env.NODE_NAME
         echo '5.--------->'
-        more /var/lib/jenkins/hudson.tasks.Maven.xml
-        def maven = tool 'maven-3'
-        echo '6.--------->'
+        mvnHome = tool 'MAVEN3'
+        echo mvnHome
         env.PATH = "${maven}/bin:${env.PATH}"
         echo '7.--------->'
         echo 'branchName---------> ${env.PATH}'
