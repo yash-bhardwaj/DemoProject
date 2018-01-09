@@ -27,7 +27,7 @@ node {
         
         def htmlOutputLocation = "/home/yash/.jenkins/workspace/demo-Pipeline/gatling-test/src/test/results/simulations-1505816818577/index.html"
         gatlingArchive()
-        manager.addShortText(htmlOutputLocation)
+        manager.addShortText("/home/yash/.jenkins/workspace/demo-Pipeline/gatling-test/src/test/results/simulations-1505816818577/index.html")
         
     }
 }
