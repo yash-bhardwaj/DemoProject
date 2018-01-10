@@ -22,6 +22,14 @@ node {
         }
         echo 'Ending the script...'
     }
+    //Gatling Simulation script
+    stage("Performance") {
+        
+        def htmlOutputLocation = "/home/yash/.jenkins/workspace/demo-Pipeline/gatling-test/src/test/results/simulations-1505816818577/index.html"
+        gatlingArchive()
+        manager.addShortText("/home/yash/.jenkins/workspace/demo-Pipeline/gatling-test/src/test/results/simulations-1505816818577/index.html")
+        
+    }
 }
 
 private String getMicroserviceInformation() {
@@ -47,22 +55,3 @@ private String runMavenVerify(MAVEN_HOME) {
         echo 'Maven Stage Passed.'
     }
 }
-
-
-//Gatling Simulation script
-
-def performanceTesting(String htmlOutputLocation) {
-    node {
-        stage("Performance") {
-            gatlingArchive()
-            manager.addShortText(htmlOutputLocation)
-        }
-    }
-}
-
-// /mnt/mesos/sandbox/workspace/DemoProject/gatling-test/src/test/results/simulations-1505816818577/index.html
-def htmlOutputLocation = "/mnt/mesos/sandbox/workspace/DemoProject/gatling-test/src/test/results/"
-
-
-performanceTesting (htmlOutputLocation)
-
